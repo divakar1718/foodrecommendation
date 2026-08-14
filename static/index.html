@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>What's Cooking Now? 🍽️</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+    <div class="bg-animation">
+        <div class="circle c1"></div>
+        <div class="circle c2"></div>
+        <div class="circle c3"></div>
+    </div>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="logo">🍽️</div>
+            <h1>What's Cooking Now?</h1>
+            <p class="tagline">Your perfect recipe, matched to the moment.</p>
+        </header>
+
+        <!-- Time Display -->
+        <div class="time-card">
+            <div class="live-time" id="liveTime">--:-- --</div>
+            <div class="meal-badge" id="mealBadge">Loading...</div>
+        </div>
+
+        <!-- Meal Time Selector -->
+        <div class="meal-selector">
+            <button class="meal-btn" data-meal="breakfast">🌅 Breakfast</button>
+            <button class="meal-btn" data-meal="brunch">☀️ Brunch</button>
+            <button class="meal-btn" data-meal="lunch">🌞 Lunch</button>
+            <button class="meal-btn" data-meal="snack">🌆 Snack</button>
+            <button class="meal-btn" data-meal="dinner">🌙 Dinner</button>
+            <button class="meal-btn" data-meal="midnight">🌃 Midnight</button>
+        </div>
+
+        <!-- Recipe Card -->
+        <div class="recipe-card" id="recipeCard">
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+                <p>Finding your perfect recipe...</p>
+            </div>
+
+            <div class="recipe-content" id="recipeContent" style="display:none;">
+                <div class="recipe-header">
+                    <span class="recipe-emoji" id="recipeEmoji"></span>
+                    <div>
+                        <h2 id="recipeName"></h2>
+                        <span class="time-range" id="timeRange"></span>
+                    </div>
+                </div>
+
+                <div class="recipe-body">
+                    <div class="section">
+                        <h3>🛒 Ingredients</h3>
+                        <ul id="ingredientsList"></ul>
+                    </div>
+
+                    <div class="section">
+                        <h3>👨‍🍳 Steps</h3>
+                        <ol id="stepsList"></ol>
+                    </div>
+                </div>
+
+                <div class="fun-fact" id="funFact"></div>
+
+                <button class="refresh-btn" id="refreshBtn">🔄 Refresh Recipe</button>
+            </div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-card">
+            <p>⏰ Next meal in: <span id="countdown" class="countdown-time">--:--:--</span></p>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ using Flask + AWS Lightsail</p>
+        </footer>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
